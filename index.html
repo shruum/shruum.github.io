@@ -9,17 +9,34 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     nav { background: #004080; color: #fff; padding: 1rem; position: sticky; top: 0; }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav ul { list-style: none; display: flex; gap: 1rem; justify-content: center; }
     nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
+    nav a:hover, nav a.active { text-decoration: underline; }
     .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
-    section { margin-bottom: 4rem; }
+    section { display: none; margin-bottom: 4rem; }
+    /* Show about by default */
+    section#about { display: block; }
+    /* Show targeted section */
+    section:target { display: block; }
     h1, h2 { margin-bottom: 0.5rem; color: #004080; }
     .grid { display: grid; gap: 1rem; }
     .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
-    a.button { display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
+    a.button { display: inline-block; margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
   </style>
+  <script>
+    // Highlight active nav link
+    window.addEventListener('DOMContentLoaded', () => {
+      const links = document.querySelectorAll('nav a');
+      function setActive() {
+        links.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === window.location.hash || (window.location.hash === '' && link.getAttribute('href') === '#about'));
+        });
+      }
+      window.addEventListener('hashchange', setActive);
+      setActive();
+    });
+  </script>
 </head>
 <body>
   <nav>
