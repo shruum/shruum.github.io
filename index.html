@@ -7,32 +7,33 @@
   <style>
     /* Basic Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-    nav { background: #004080; color: #fff; padding: 1rem; position: sticky; top: 0; }
-    nav ul { list-style: none; display: flex; gap: 1rem; justify-content: center; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #f0f2f5; }
+    nav { background: #004080; color: #fff; padding: 1.5rem; position: sticky; top: 0; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; justify-content: center; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; font-size: 1rem; }
     nav a:hover, nav a.active { text-decoration: underline; }
     .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
-    section { display: none; margin-bottom: 4rem; }
-    /* Show only target section; default to about if none */
+    section { display: none; margin-bottom: 2rem; }
     section:target { display: block; }
     body:not([data-hash]) section#about { display: block; }
-    h1, h2 { margin-bottom: 0.5rem; color: #004080; }
-    .profile-pic { float: right; width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-left: 1rem; }
+    h1 { color: #004080; margin-bottom: 0.5rem; }
+    h2 { color: #004080; margin-bottom: 0.75rem; }
+    .about-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 2rem; }
+    .about-card .profile-pic { float: none; width: 180px; height: 180px; border-radius: 8px; object-fit: cover; }
+    .about-content { flex: 1; }
     .video-wrapper { position: relative; padding-bottom: 40%; height: 0; overflow: hidden; margin-bottom: 1rem; max-width: 600px; }
     .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
     ol li { margin-bottom: 1rem; }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
     .section-gap { margin-bottom: 1.5rem; }
-    a.button { display: inline-block; margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
+    a.button { display: inline-block; margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
   </style>
   <script>
-    // Manage active nav and default section
     function showSection() {
       const hash = window.location.hash || '#about';
       document.body.setAttribute('data-hash', hash);
       document.querySelectorAll('section').forEach(sec => {
-        if (sec.id === hash.substring(1)) sec.style.display = 'block'; else sec.style.display = 'none';
+        sec.style.display = sec.id === hash.substring(1) ? 'block' : 'none';
       });
       document.querySelectorAll('nav a').forEach(link => {
         link.classList.toggle('active', link.getAttribute('href') === hash);
@@ -47,38 +48,39 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#background">Background</a></li>
-      <li><a href="#pubs">Publications & Patents</a></li>
+      <li><a href="#pubs">Publications &amp; Patents</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#other">Other Skills</a></li>
     </ul>
   </nav>
   <div class="container">
     <section id="about">
-      <img src="assets/photo.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
-      <h1>Shruthi Gowda</h1>
-<!--       <p>PhD Candidate & (Previously) Research Engineer with over 10 years of experience in Computer Vision, Machine Learning, Deep Learning, and Embedded Software, applied to domains such as Autonomous Driving, Quality Inspection, and Healthcare.</p> -->
-      <p>I'm Shruthi Gowda, a PhD candidate in the Data & AI Cluster at the Department of Mathematics and Computer Science, Eindhoven University of Technology (TU/e).
-
-My research explores the intersection of neuro-inspired AI and deep learning, with a particular focus on cognitive biases, multi-memory systems, and sparse coding in the brain — aiming to bridge these cognitive principles with the architecture of deep neural networks.
-
-Prior to academia, I spent over 10 years in industry as an AI Research Engineer and Software Engineer, developing advanced machine learning and embedded software solutions across domains such as Autonomous Driving, Quality Inspection, and Healthcare.
-        Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.
-
- </p>
-      <div class="section-gap"></div>
-      <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Robustness, Multi-Modality </p>
-      <div class="section-gap"></div>
-     <p><strong>Contact:</strong><br>
-         shruthi.ngowda@outlook.com<br>
-         s.gowda@tue.nl<br>
-         Phone: +31 (0) 644 609 589<br>
-         Location: Eindhoven, Netherlands
-      </p>      <p>
-        <a href="https://scholar.google.com/citations?user=e9CgwRgAAAAJ&hl=en" class="button" target="_blank">Google Scholar</a>
-        <a href="https://github.com/shruum" class="button" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/shruthi-gowda-19811b15/" class="button" target="_blank">LinkedIn</a>
-        <a href="CV_Shruthi_Gowda.pdf" class="button" target="_blank">Download CV</a>
-      </p>
+      <div class="about-card">
+        <img src="media/profile.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
+        <div class="about-content">
+          <h1>Shruthi Gowda</h1>
+          <p>I'm Shruthi Gowda, a <span style="color: #004080;">PhD candidate</span> in the <a href="https://dai.win.tue.nl/" target="_blank" style="color: #004080; text-decoration: none;">Data &amp; AI Cluster</a> at the Department of Mathematics and Computer Science, Eindhoven University of Technology (TU/e).</p>
+          <p>My research explores the intersection of neuro-inspired AI and deep learning, with a particular focus on cognitive biases, multi-memory systems, and sparse coding in the brain — aiming to bridge these cognitive principles with the architecture of deep neural networks.</p>
+          
+          <p>Prior to academia, I spent over 10 years in industry as an AI Research Engineer and Software Engineer, developing advanced machine learning and embedded software solutions across domains such as Autonomous Driving, Quality Inspection, and Healthcare. Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.</p>
+          <div class="section-gap"></div>
+          <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Robustness, Multi-Modality Learning.</p>
+          <div class="section-gap"></div>
+          <p><strong>Contact:</strong><br>
+            shruthi.ngowda@outlook.com<br>
+            s.gowda@tue.nl<br>
+            Phone: +31 (0) 644 609 589<br>
+            Location: Eindhoven, Netherlands
+          </p>
+          <p>
+            <a href="https://scholar.google.com/citations?user=e9CgwRgAAAAJ&hl=en" class="button" target="_blank">Google Scholar</a>
+            <a href="https://github.com/shruum" class="button" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/shruthi-gowda-19811b15/" class="button" target="_blank">LinkedIn</a>
+            <a href="CV_Shruthi_Gowda.pdf" class="button" target="_blank">Download CV</a>
+          </p>
+        </div>
+      </div>
+      </div>
     </section>
 
     <!-- Background: Education, Experience & Projects -->
