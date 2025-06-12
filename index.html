@@ -20,6 +20,8 @@
     section:target { display: block; }
     h1, h2 { margin-bottom: 0.5rem; color: #004080; }
     .profile-pic { float: right; width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-left: 1rem; }
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1rem; }
+    .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
     .grid { display: grid; gap: 1rem; }
     .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
@@ -55,7 +57,7 @@
 
     <!-- About Section -->
     <section id="about">
-      <img src="photo.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
+      <img src="media/profile.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
       <h1>Shruthi Gowda</h1>
       <p>PhD Candidate & (Previously) Research Engineer with over 10 years of experience in Computer Vision, Machine Learning, Deep Learning, and Embedded Software, applied to domains such as Autonomous Driving, Quality Inspection, and Healthcare.</p>
       <div class="section-gap"></div>
@@ -79,41 +81,52 @@
       </ul>
       <div class="section-gap"></div>
       <h2>Professional Experience</h2>
-      <div>
-        <h3>Research Engineer & Tech Lead – NavInfo Europe B.V., Eindhoven, NL (2019–2023)</h3>
-        <ul>
-          <li>Led design and implementation of the Vision Development Module, a computer vision library for industrial defect detection.</li>
-          <li>Developed algorithms for adversarial robustness and continual learning optimized for edge devices.</li>
-          <li>Contributed to multi-view geometry, camera calibration, and 3D vision projects.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Senior Software Engineer – National Instruments (Vision R&amp;D), Bangalore, IN (2013–2019)</h3>
-        <ul>
-          <li>Built a high-performance deep learning inference engine by integrating TensorFlow and Intel OpenVINO for NI embedded hardware.</li>
-          <li>Developed and shipped industrial inspection products as part of the NI Machine Vision library, enabling robust quality control.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Research Assistant – Image and Signal Processing, UCL, Belgium (2012–2013)</h3>
-        <ul>
-          <li>Conducted research on advanced image processing techniques for signal and vision applications.</li>
-        </ul>
-      </div>
+      <ul>
+        <li><strong>Research Engineer & Tech Lead</strong> at NavInfo Europe B.V., Eindhoven, NL (2019–2023)
+          <ul>
+            <li>Led design and implementation of the Vision Development Module, a computer vision library for industrial defect detection.</li>
+            <li>Developed algorithms for adversarial robustness and continual learning optimized for edge devices.</li>
+            <li>Contributed to multi-view geometry, camera calibration, and 3D vision research.</li>
+          </ul>
+        </li>
+        <li><strong>Senior Software Engineer</strong> at National Instruments (Vision R&amp;D), Bangalore, IN (2013–2019)
+          <ul>
+            <li>Built a high-performance deep learning inference engine integrating TensorFlow and Intel OpenVINO for NI embedded hardware.</li>
+            <li>Developed and shipped industrial inspection products for quality control in manufacturing.</li>
+          </ul>
+        </li>
+        <li><strong>Research Assistant</strong> at Image and Signal Processing Lab, UCL, Belgium (2012–2013)
+          <ul>
+            <li>Conducted advanced research on image processing techniques for signal and vision applications.</li>
+          </ul>
+        </li>
+      </ul>
       <div class="section-gap"></div>
       <h2>Projects</h2>
       <div class="grid grid-2">
         <div>
           <h3>SAFEXPLAIN (EU Horizon Project)</h3>
-          <p>As Tech Lead for the automotive use case, I designed safety patterns and developed novel explainable AI components for critical embedded systems. This project ensures that AI-driven features in autonomous vehicles adhere to ISO 26262 Functional Safety standards. Read the <a href="https://safexplain.eu/automotive-case-study/" target="_blank">Automotive Case Study</a> for details.</p>
+          <p>As Tech Lead for the automotive use case, I designed safety patterns and developed novel explainable AI components for critical embedded systems. This project ensures that AI-driven features in autonomous vehicles adhere to ISO 26262 Functional Safety standards. <a href="https://safexplain.eu/automotive-case-study/" target="_blank">Automotive Case Study</a>.</p>
         </div>
         <div>
           <h3>ENFIELD (EU Horizon Project)</h3>
-          <p>Within this collaborative effort involving 15 partners, I researched and implemented adaptive artificial intelligence algorithms featuring lifelong learning, robustness, and fairness. The ENFIELD project aims to create trustworthy AI systems for dynamic real-world environments. More information at the <a href="https://www.enfield-project.eu/" target="_blank">ENFIELD project site</a>.</p>
+          <p>Collaborated with 15 partners to research and implement adaptive AI algorithms featuring lifelong learning, robustness, and fairness. ENFIELD aims to create trustworthy AI for dynamic real-world environments. <a href="https://www.enfield-project.eu/" target="_blank">Project Site</a>.</p>
         </div>
         <div>
-          <h3>NI Machine Vision Library (National Instruments)</h3>
-          <p>I led the development of a machine vision library that integrates deep learning inference capabilities with traditional computer vision. This product supports industrial defect inspection workflows and embeds AI models on NI hardware. Learn more on the <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html" target="_blank">Vision Development Module</a> page.</p>
+          <h3>NI Machine Vision Library</h3>
+          <p>Led development of a machine vision library integrating deep learning inference with traditional computer vision techniques, shipping robust industrial inspection workflows on NI embedded hardware. <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html" target="_blank">Vision Development Module</a>.</p>
+        </div>
+        <div>
+          <h3>Scene Understanding &amp; Object Recognition Suite for ADS</h3>
+          <p>Developed in NavInfo’s Advanced Research Lab, this suite processes multi-camera inputs to detect road users, traffic signs, and lane markers in real-time, supporting autonomous driving systems. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
+        </div>
+        <div>
+          <h3>Anonymizer for GDPR Compliance</h3>
+          <p>Implemented an on-device perception module that detects and blurs personally identifiable information such as faces and license plates, ensuring GDPR compliance in video streams.</p>
+        </div>
+        <div>
+          <h3>Change Rate Detection for HD Map Updates</h3>
+          <p>Created algorithms to analyze geo-tagged video feeds and detect changes in road infrastructure, enabling automated HD map maintenance for autonomous vehicle navigation. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
         </div>
       </div>
     </section>
@@ -124,38 +137,42 @@
       <ol>
         <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2024). “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training.” International Conference on Learning Representations (ICLR). fileciteturn2file0</li>
         <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “LSFSL: Leveraging Shape Information in Few‑shot Learning.” Workshop on Learning with Limited Labelled Data, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani, Ratnajit Mukherjee, Haris Iqbal, Shabbir Marzban, Ahmed Badar, Terence Brouns &amp; Bahram Zonooz (2022). “A Comprehensive Study of Real‑Time Object Detection Networks Across Multiple Domains: A Survey.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “LSFSL: Leveraging Shape Information in Few-shot Learning.” Workshop on Learning with Limited Labelled Data, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani, Ratnajit Mukherjee, Haris Iqbal, Shabbir Marzban, Ahmed Badar, Terence Brouns &amp; Bahram Zonooz (2022). “A Comprehensive Study of Real-Time Object Detection Networks Across Multiple Domains: A Survey.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
         <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “AI Driven Road Maintenance Inspection.” International Intelligent Transportation Systems World Congress (ITS World Congress). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Neural Bias Distillation to Improve Generalization and Robustness through Shape‑awareness.” Conference on Lifelong Learning Agents (CoLLAs). fileciteturn2file1</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Neural Bias Distillation to Improve Generalization and Robustness through Shape-awareness.” Conference on Lifelong Learning Agents (CoLLAs). fileciteturn2file1</li>
         <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Do Thermal Data Make Detection Systems More Reliable?” Machine Learning for Autonomous Driving Workshop, Advances in Neural Information Processing Systems (NeurIPS). fileciteturn2file3</li>
       </ol>
       <div class="section-gap"></div>
       <h2>Patents</h2>
       <ul>
-        <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method to Detect Changes in Geo‑Tagged Videos to Update HD Maps. fileciteturn2file0</li>
-        <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self‑Supervised Learning Domains. fileciteturn2file0</li>
-        <li>Dutch Patent 020065 NL‑PD: LSFSL: Leveraging Shape Information in Few‑shot Learning. fileciteturn2file0</li>
-        <li>US Patent 019922 US‑PD‑VB/kk: Method to Add Inductive Bias into Deep Neural Networks. fileciteturn2file0</li>
-        <li>US Patent 17/581,759: Deep Learning Based Multi‑Sensor Detection System. fileciteturn2file0</li>
-        <li>Dutch Patent 020050 NL‑PD1: Cognitive Continual Learning System. fileciteturn2file2</li>
+        <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method to Detect Changes in Geo-Tagged Videos to Update HD Maps. fileciteturn2file0</li>
+        <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domains. fileciteturn2file0</li>
+        <li>Dutch Patent 020065 NL-PD: LSFSL: Leveraging Shape Information in Few-shot Learning. fileciteturn2file0</li>
+        <li>US Patent 019922 US-PD-VB/kk: Method to Add Inductive Bias into Deep Neural Networks. fileciteturn2file0</li>
+        <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System. fileciteturn2file0</li>
+        <li>Dutch Patent 020050 NL-PD1: Cognitive Continual Learning System. fileciteturn2file2</li>
       </ul>
     </section>
 
     <!-- Media Section -->
     <section id="media">
       <h2>Media</h2>
-      <ul>
-        <li><a href="https://www.youtube.com/watch?v=Zav39rAsUNk&t=6s" target="_blank">Presenting “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training” at ICLR 2024</a></li>
-        <li><a href="https://www.youtube.com/watch?v=WyjT6E0kKAc&t=1s" target="_blank">[Link 2]</a></li>
-        <li><a href="https://www.youtube.com/watch?v=-Z_DEE96VM0&t=2s" target="_blank">[Link 3]</a></li>
-      </ul>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/Zav39rAsUNk?start=6" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/WyjT6E0kKAc?start=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/-Z_DEE96VM0?start=2" frameborder="0" allowfullscreen></iframe>
+      </div>
     </section>
 
     <!-- Other Skills Section -->
     <section id="other">
       <h2>Other Skills &amp; Hobbies</h2>
-      <p><strong>Travel Highlights:</strong> Exploring Europe’s cultural landmarks and landscapes.</p>
+      <p><strong>Travel Highlights:</strong> Exploring Europe’s landmarks and landscapes.</p>
       <p><strong>Dance Performances:</strong></p>
       <ul>
         <li><a href="#" target="_blank">Contemporary Dance Showcase</a></li>
