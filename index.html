@@ -14,32 +14,32 @@
     nav a:hover, nav a.active { text-decoration: underline; }
     .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
     section { display: none; margin-bottom: 4rem; }
-    /* Show about by default */
-    section#about { display: block; }
-    /* Show targeted section */
+    /* Show only target section; default to about if none */
     section:target { display: block; }
+    body:not([data-hash]) section#about { display: block; }
     h1, h2 { margin-bottom: 0.5rem; color: #004080; }
     .profile-pic { float: right; width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-left: 1rem; }
-    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 1rem; }
+    .video-wrapper { position: relative; padding-bottom: 40%; height: 0; overflow: hidden; margin-bottom: 1rem; max-width: 600px; }
     .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
-    .grid { display: grid; gap: 1rem; }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    ol li { margin-bottom: 1rem; }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
     .section-gap { margin-bottom: 1.5rem; }
     a.button { display: inline-block; margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
   </style>
   <script>
-    // Highlight active nav link
-    window.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('nav a');
-      function setActive() {
-        links.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === window.location.hash || (window.location.hash === '' && link.getAttribute('href') === '#about'));
-        });
-      }
-      window.addEventListener('hashchange', setActive);
-      setActive();
-    });
+    // Manage active nav and default section
+    function showSection() {
+      const hash = window.location.hash || '#about';
+      document.body.setAttribute('data-hash', hash);
+      document.querySelectorAll('section').forEach(sec => {
+        if (sec.id === hash.substring(1)) sec.style.display = 'block'; else sec.style.display = 'none';
+      });
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === hash);
+      });
+    }
+    window.addEventListener('DOMContentLoaded', showSection);
+    window.addEventListener('hashchange', showSection);
   </script>
 </head>
 <body>
@@ -52,22 +52,32 @@
       <li><a href="#other">Other Skills</a></li>
     </ul>
   </nav>
-
   <div class="container">
-
-    <!-- About Section -->
     <section id="about">
-      <img src="media/profile.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
+      <img src="assets/photo.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
       <h1>Shruthi Gowda</h1>
-      <p>PhD Candidate & (Previously) Research Engineer with over 10 years of experience in Computer Vision, Machine Learning, Deep Learning, and Embedded Software, applied to domains such as Autonomous Driving, Quality Inspection, and Healthcare.</p>
+<!--       <p>PhD Candidate & (Previously) Research Engineer with over 10 years of experience in Computer Vision, Machine Learning, Deep Learning, and Embedded Software, applied to domains such as Autonomous Driving, Quality Inspection, and Healthcare.</p> -->
+      <p>I'm Shruthi Gowda, a PhD candidate in the Data & AI Cluster at the Department of Mathematics and Computer Science, Eindhoven University of Technology (TU/e).
+
+My research explores the intersection of neuro-inspired AI and deep learning, with a particular focus on cognitive biases, multi-memory systems, and sparse coding in the brain — aiming to bridge these cognitive principles with the architecture of deep neural networks.
+
+Prior to academia, I spent over 10 years in industry as an AI Research Engineer and Software Engineer, developing advanced machine learning and embedded software solutions across domains such as Autonomous Driving, Quality Inspection, and Healthcare.
+        Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.
+
+ </p>
       <div class="section-gap"></div>
-      <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Model Robustness, Multi-Modality Learning.</p>
+      <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Robustness, Multi-Modality </p>
       <div class="section-gap"></div>
-      <p><strong>Contact:</strong> shruthi.ngowda@outlook.com | +31 (0) 644609589 | Eindhoven, Netherlands</p>
-      <p>
+     <p><strong>Contact:</strong><br>
+         shruthi.ngowda@outlook.com<br>
+         s.gowda@tue.nl<br>
+         Phone: +31 (0) 644 609 589<br>
+         Location: Eindhoven, Netherlands
+      </p>      <p>
         <a href="https://scholar.google.com/citations?user=e9CgwRgAAAAJ&hl=en" class="button" target="_blank">Google Scholar</a>
         <a href="https://github.com/shruum" class="button" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/shruthi-gowda-19811b15/" class="button" target="_blank">LinkedIn</a>
+        <a href="CV_Shruthi_Gowda.pdf" class="button" target="_blank">Download CV</a>
       </p>
     </section>
 
@@ -135,29 +145,30 @@
     <section id="pubs">
       <h2>Selected Publications</h2>
       <ol>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2024). “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training.” International Conference on Learning Representations (ICLR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “LSFSL: Leveraging Shape Information in Few-shot Learning.” Workshop on Learning with Limited Labelled Data, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani, Ratnajit Mukherjee, Haris Iqbal, Shabbir Marzban, Ahmed Badar, Terence Brouns &amp; Bahram Zonooz (2022). “A Comprehensive Study of Real-Time Object Detection Networks Across Multiple Domains: A Survey.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “AI Driven Road Maintenance Inspection.” International Intelligent Transportation Systems World Congress (ITS World Congress). fileciteturn2file0</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Neural Bias Distillation to Improve Generalization and Robustness through Shape-awareness.” Conference on Lifelong Learning Agents (CoLLAs). fileciteturn2file1</li>
-        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Do Thermal Data Make Detection Systems More Reliable?” Machine Learning for Autonomous Driving Workshop, Advances in Neural Information Processing Systems (NeurIPS). fileciteturn2file3</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2024). “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training.” International Conference on Learning Representations (ICLR).</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2023). “Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning.” Transactions on Machine Learning Research (TMLR).</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2023). “LSFSL: Leveraging Shape Information in Few-shot Learning.” Workshop on Learning with Limited Labelled Data, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR).</li>
+        <li>Shruthi Gowda et al. (2022). “A Comprehensive Study of Real-Time Object Detection Networks Across Multiple Domains: A Survey.” Transactions on Machine Learning Research (TMLR).</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2021). “AI Driven Road Maintenance Inspection.” International Intelligent Transportation Systems World Congress (ITS World Congress).</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2021). “Neural Bias Distillation to Improve Generalization and Robustness through Shape-awareness.” Conference on Lifelong Learning Agents (CoLLAs).</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2021). “Do Thermal Data Make Detection Systems More Reliable?” Machine Learning for Autonomous Driving Workshop, Advances in Neural Information Processing Systems (NeurIPS).</li>
       </ol>
       <div class="section-gap"></div>
       <h2>Patents</h2>
       <ul>
-        <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method to Detect Changes in Geo-Tagged Videos to Update HD Maps. fileciteturn2file0</li>
-        <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domains. fileciteturn2file0</li>
-        <li>Dutch Patent 020065 NL-PD: LSFSL: Leveraging Shape Information in Few-shot Learning. fileciteturn2file0</li>
-        <li>US Patent 019922 US-PD-VB/kk: Method to Add Inductive Bias into Deep Neural Networks. fileciteturn2file0</li>
-        <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System. fileciteturn2file0</li>
-        <li>Dutch Patent 020050 NL-PD1: Cognitive Continual Learning System. fileciteturn2file2</li>
+        <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method to Detect Changes in Geo-Tagged Videos to Update HD Maps.</li>
+        <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domains.</li>
+        <li>Dutch Patent 020065 NL-PD: LSFSL: Leveraging Shape Information in Few-shot Learning.</li>
+        <li>US Patent 019922 US-PD-VB/kk: Method to Add Inductive Bias into Deep Neural Networks.</li>
+        <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System.</li>
+        <li>Dutch Patent 020050 NL-PD1: Cognitive Continual Learning System.</li>
       </ul>
     </section>
 
     <!-- Media Section -->
     <section id="media">
       <h2>Media</h2>
+      <h3>Paper Presentations</h3>
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/Zav39rAsUNk?start=6" frameborder="0" allowfullscreen></iframe>
       </div>
