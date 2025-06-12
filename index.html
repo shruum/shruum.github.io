@@ -18,10 +18,15 @@
     body:not([data-hash]) section#about { display: block; }
     h1 { color: #004080; margin-bottom: 0.5rem; }
     h2 { color: #004080; margin-bottom: 0.75rem; }
-    .about-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 2rem; }
-    .about-card .profile-pic { float: none; width: 180px; height: 180px; border-radius: 8px; object-fit: cover; }
+    p { margin-bottom: 1rem; }
+    /* Card styling for all sections */
+    .section-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    /* About card */
+    .about-card { display: flex; align-items: flex-start; gap: 2rem; }
+    .about-card .profile-pic { width: 200px; height: 200px; border-radius: 8px; object-fit: cover; }
     .about-content { flex: 1; }
-    .video-wrapper { position: relative; padding-bottom: 40%; height: 0; overflow: hidden; margin-bottom: 1rem; max-width: 600px; }
+    /* Video styling */
+    .video-wrapper { position: relative; padding-bottom: 30%; height: 0; overflow: hidden; margin-bottom: 1rem; max-width: 400px; }
     .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
     ol li { margin-bottom: 1rem; }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
@@ -53,15 +58,16 @@
       <li><a href="#other">Other Skills</a></li>
     </ul>
   </nav>
+
   <div class="container">
+
     <section id="about">
-      <div class="about-card">
-        <img src="media/profile.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
+      <div class="section-card about-card">
+        <img src="assets/photo.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
         <div class="about-content">
           <h1>Shruthi Gowda</h1>
           <p>I'm Shruthi Gowda, a <span style="color: #004080;">PhD candidate</span> in the <a href="https://dai.win.tue.nl/" target="_blank" style="color: #004080; text-decoration: none;">Data &amp; AI Cluster</a> at the Department of Mathematics and Computer Science, Eindhoven University of Technology (TU/e).</p>
           <p>My research explores the intersection of neuro-inspired AI and deep learning, with a particular focus on cognitive biases, multi-memory systems, and sparse coding in the brain — aiming to bridge these cognitive principles with the architecture of deep neural networks.</p>
-          
           <p>Prior to academia, I spent over 10 years in industry as an AI Research Engineer and Software Engineer, developing advanced machine learning and embedded software solutions across domains such as Autonomous Driving, Quality Inspection, and Healthcare. Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.</p>
           <div class="section-gap"></div>
           <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Robustness, Multi-Modality Learning.</p>
@@ -80,11 +86,11 @@
           </p>
         </div>
       </div>
-      </div>
     </section>
 
     <!-- Background: Education, Experience & Projects -->
     <section id="background">
+      <div class="section-card">
       <h2>Education</h2>
       <ul>
         <li><strong>PhD in Computer Vision and Artificial Intelligence</strong>, Eindhoven University of Technology (TU/e), Netherlands, 2023–Present</li>
@@ -141,10 +147,12 @@
           <p>Created algorithms to analyze geo-tagged video feeds and detect changes in road infrastructure, enabling automated HD map maintenance for autonomous vehicle navigation. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Publications & Patents -->
     <section id="pubs">
+      <div class="section-card">
       <h2>Selected Publications</h2>
       <ol>
         <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2024). “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training.” International Conference on Learning Representations (ICLR).</li>
@@ -165,10 +173,12 @@
         <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System.</li>
         <li>Dutch Patent 020050 NL-PD1: Cognitive Continual Learning System.</li>
       </ul>
+      </div>
     </section>
 
     <!-- Media Section -->
     <section id="media">
+      <div class="section-card">
       <h2>Media</h2>
       <h3>Paper Presentations</h3>
       <div class="video-wrapper">
@@ -180,6 +190,7 @@
       <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/-Z_DEE96VM0?start=2" frameborder="0" allowfullscreen></iframe>
       </div>
+      <\div>
     </section>
 
     <!-- Other Skills Section -->
