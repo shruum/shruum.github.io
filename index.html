@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Portfolio</title>
+  <title>Shruthi Gowda | Portfolio</title>
   <style>
     /* Basic Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,9 +16,9 @@
     section { margin-bottom: 4rem; }
     h1, h2 { margin-bottom: 0.5rem; color: #004080; }
     .grid { display: grid; gap: 1rem; }
-    /* Example grid for projects/publications */
     .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
     footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
+    a.button { display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -36,17 +36,24 @@
   <div class="container">
     <!-- About Section -->
     <section id="about">
-      <h1>Your Name</h1>
-      <p>Brief professional summary or tagline.</p>
+      <h1>Shruthi Gowda</h1>
+      <p>PhD Candidate & (Prev) Research Engineer with 10 years of experience in Computer Vision, Machine Learning, Deep Learning, and Embedded Software for Autonomous Driving, Quality Inspection, and Healthcare applications.</p>
+      <p><strong>Research Interests:</strong> Neuro-inspired AI, Cognitive Bias, Continual Learning, Robustness, Multi-Modality Learning.</p>
+      <p><strong>Contact:</strong> shruthi.ngowda@outlook.com | +31 (0) 644609589 | Eindhoven, Netherlands</p>
+      <p>
+        <a href="https://scholar.google.com/citations?user=e9CgwRgAAAAJ&hl=en" class="button" target="_blank">Google Scholar</a>
+        <a href="https://github.com/shruum" class="button" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/shruthi-gowda-19811b15/" class="button" target="_blank">LinkedIn</a>
+      </p>
     </section>
 
     <!-- Education Section -->
     <section id="education">
       <h2>Education</h2>
       <ul>
-        <li><strong>PhD in [Your Field]</strong>, University Name, YYYY–Present (expected YYYY)</li>
-        <li><strong>MSc in [Your Field]</strong>, University Name, YYYY–YYYY</li>
-        <li><strong>BSc in [Your Field]</strong>, University Name, YYYY–YYYY</li>
+        <li><strong>PhD in Computer Vision & AI</strong>, Eindhoven University of Technology (TU/e), Netherlands, 2023 &ndash; Present</li>
+        <li><strong>MSc in Electrical & Computer Engineering</strong>, Universitat Politècnica de Catalunya (UPC) & Université Catholique de Louvain (UCL), Spain & Belgium, 2010 &ndash; 2012</li>
+        <li><strong>B.Eng. in Electronics & Communication</strong>, Visvesvaraya Technological University (VTU), India, 2006 &ndash; 2010</li>
       </ul>
     </section>
 
@@ -54,14 +61,29 @@
     <section id="experience">
       <h2>Professional Experience</h2>
       <div>
-        <h3>Job Title – Company Name</h3>
-        <p><em>Location &middot; YYYY–Present</em></p>
+        <h3>Research Engineer & Tech Lead – NavInfo Europe B.V.</h3>
+        <p><em>Eindhoven, NL &middot; 2019 &ndash; 2023</em></p>
         <ul>
-          <li>Key responsibility or achievement</li>
-          <li>Another significant contribution</li>
+          <li>Led Vision Development Module: a Computer Vision library for industrial defect detection.</li>
+          <li>Developed adversarial robustness and continual learning solutions for edge devices.</li>
+          <li>Worked on multi-view geometry, calibration, and 3D vision (Virtual Viewpoint Reconstruction project).</li>
         </ul>
       </div>
-      <!-- Repeat for other positions -->
+      <div>
+        <h3>Senior Software Engineer – National Instruments (Vision R&amp;D)</h3>
+        <p><em>Bangalore, India &middot; 2013 &ndash; 2019</em></p>
+        <ul>
+          <li>Built ML-optimized inference engines integrating TensorFlow & OpenVINO for NI embedded hardware.</li>
+          <li>Shipped industrial defect inspection products, contributing to NI Machine Vision library.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Research Assistant – Image & Signal Processing, UCL</h3>
+        <p><em>Belgium &middot; 2012 &ndash; 2013</em></p>
+        <ul>
+          <li>Assisted research on image processing techniques for signal and vision applications.</li>
+        </ul>
+      </div>
     </section>
 
     <!-- Projects Section -->
@@ -69,45 +91,47 @@
       <h2>Projects</h2>
       <div class="grid grid-2">
         <div>
-          <h3>Project One</h3>
-          <p>Short description, tech stack, link to demo or repo.</p>
+          <h3>SAFEXPLAIN (EU Horizon Project)</h3>
+          <p>Tech Lead for DL & automotive use case: designed safety patterns and explainable AI components adhering to FUSA standards.</p>
         </div>
         <div>
-          <h3>Project Two</h3>
-          <p>Short description, tech stack, link to demo or repo.</p>
+          <h3>Scene Understanding & Object Recognition Suite</h3>
+          <p>Developed a comprehensive framework for ADS: robust detection of road users, signs, and lane localization.</p>
         </div>
-        <!-- Add more projects as needed -->
+        <div>
+          <h3>ENFIELD (EU Horizon Project)</h3>
+          <p>Researched lifelong learning, robustness, and fairness in AI; collaborated with 15 partners to enable adaptive AI.</p>
+        </div>
       </div>
     </section>
 
     <!-- PhD & Publications Section -->
     <section id="phd">
-      <h2>PhD Journey & Publications</h2>
-      <p>Overview of PhD research: topic, advisor, milestones.</p>
+      <h2>PhD Journey &amp; Publications</h2>
+      <p>My PhD focuses on neuro-inspired AI, continual learning, and robustness for real-world applications. Under the supervision of [Advisor Name], key milestones include coursework completion, first-year review (2024), and prototype deployments.</p>
       <h3>Selected Publications</h3>
       <ol>
-        <li><em>Author(s)</em> (YYYY). "Title of Paper." <strong>Journal/Conference</strong>. DOI/Link.</li>
-        <!-- List additional publications -->
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2024). "Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training." <em>ICLR</em>.</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2023). "Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning." <em>TMLR</em>.</li>
+        <li>Shruthi Gowda, Elahe Arani & Bahram Zonooz (2023). "LSFSL: Leveraging Shape Information in Few-shot Learning." <em>CVPR Workshop on Learning with Limited Labelled Data</em>.</li>
+        <li>Shruthi Gowda et al. (2022). "A Comprehensive Study of Real-Time Object Detection Networks Across Multiple Domains: A Survey." <em>TMLR</em>.</li>
       </ol>
     </section>
 
     <!-- Other Skills Section -->
     <section id="other">
-      <h2>Other Skills & Hobbies</h2>
-      <p>Travel Highlights:</p>
+      <h2>Other Skills &amp; Hobbies</h2>
+      <p><strong>Travel Highlights:</strong> Exploring Europe’s cultural landmarks & landscapes (photo gallery coming soon).</p>
+      <p><strong>Dance Performances:</strong></p>
       <ul>
-        <li>Brief note or link to travel gallery/video.</li>
-      </ul>
-      <p>Dance Performances:</p>
-      <ul>
-        <li><a href="link_to_video_1" target="_blank">Performance Video 1</a></li>
-        <li><a href="link_to_video_2" target="_blank">Performance Video 2</a></li>
+        <li><a href="#" target="_blank">Contemporary Dance Showcase</a></li>
+        <li><a href="#" target="_blank">Classical Fusion Piece</a></li>
       </ul>
     </section>
   </div>
 
   <footer>
-    <p>&copy; YYYY Your Name. Designed with ❤️.</p>
+    <p>&copy; 2025 Shruthi Gowda. Designed with ❤️.</p>
   </footer>
 </body>
 </html>
