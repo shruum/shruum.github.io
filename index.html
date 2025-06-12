@@ -1,12 +1,113 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" style="width:100%; height:100%;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>kekayan's Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Portfolio</title>
+  <style>
+    /* Basic Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+    nav { background: #004080; color: #fff; padding: 1rem; position: sticky; top: 0; }
+    nav ul { list-style: none; display: flex; gap: 1rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
+    section { margin-bottom: 4rem; }
+    h1, h2 { margin-bottom: 0.5rem; color: #004080; }
+    .grid { display: grid; gap: 1rem; }
+    /* Example grid for projects/publications */
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: #666; }
+  </style>
 </head>
-  <body style="width:100%; height:100%; margin:0;">
-    <iframe src="https://docs.google.com/gview?url= https://github.com/shruum/resume/raw/main/CV_Shruthi_Gowda.pdf &embedded=true" style="width:100%; height:100%;" frameborder="0"></iframe>
-  </body>
-</html>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#phd">PhD & Publications</a></li>
+      <li><a href="#other">Other Skills</a></li>
+    </ul>
+  </nav>
 
+  <div class="container">
+    <!-- About Section -->
+    <section id="about">
+      <h1>Your Name</h1>
+      <p>Brief professional summary or tagline.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>PhD in [Your Field]</strong>, University Name, YYYY–Present (expected YYYY)</li>
+        <li><strong>MSc in [Your Field]</strong>, University Name, YYYY–YYYY</li>
+        <li><strong>BSc in [Your Field]</strong>, University Name, YYYY–YYYY</li>
+      </ul>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <div>
+        <h3>Job Title – Company Name</h3>
+        <p><em>Location &middot; YYYY–Present</em></p>
+        <ul>
+          <li>Key responsibility or achievement</li>
+          <li>Another significant contribution</li>
+        </ul>
+      </div>
+      <!-- Repeat for other positions -->
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Project One</h3>
+          <p>Short description, tech stack, link to demo or repo.</p>
+        </div>
+        <div>
+          <h3>Project Two</h3>
+          <p>Short description, tech stack, link to demo or repo.</p>
+        </div>
+        <!-- Add more projects as needed -->
+      </div>
+    </section>
+
+    <!-- PhD & Publications Section -->
+    <section id="phd">
+      <h2>PhD Journey & Publications</h2>
+      <p>Overview of PhD research: topic, advisor, milestones.</p>
+      <h3>Selected Publications</h3>
+      <ol>
+        <li><em>Author(s)</em> (YYYY). "Title of Paper." <strong>Journal/Conference</strong>. DOI/Link.</li>
+        <!-- List additional publications -->
+      </ol>
+    </section>
+
+    <!-- Other Skills Section -->
+    <section id="other">
+      <h2>Other Skills & Hobbies</h2>
+      <p>Travel Highlights:</p>
+      <ul>
+        <li>Brief note or link to travel gallery/video.</li>
+      </ul>
+      <p>Dance Performances:</p>
+      <ul>
+        <li><a href="link_to_video_1" target="_blank">Performance Video 1</a></li>
+        <li><a href="link_to_video_2" target="_blank">Performance Video 2</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; YYYY Your Name. Designed with ❤️.</p>
+  </footer>
+</body>
+</html>
