@@ -14,7 +14,9 @@
     nav a:hover, nav a.active { text-decoration: underline; }
     .container { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
     section { display: none; margin-bottom: 4rem; }
+    /* Show about by default */
     section#about { display: block; }
+    /* Show targeted section */
     section:target { display: block; }
     h1, h2 { margin-bottom: 0.5rem; color: #004080; }
     .profile-pic { float: right; width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-left: 1rem; }
@@ -27,12 +29,12 @@
     a.button { display: inline-block; margin: 0.5rem 0.5rem 0 0; padding: 0.5rem 1rem; background: #004080; color: #fff; text-decoration: none; border-radius: 4px; }
   </style>
   <script>
+    // Highlight active nav link
     window.addEventListener('DOMContentLoaded', () => {
       const links = document.querySelectorAll('nav a');
       function setActive() {
         links.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === window.location.hash ||
-           (window.location.hash === '' && link.getAttribute('href') === '#about'));
+          link.classList.toggle('active', link.getAttribute('href') === window.location.hash || (window.location.hash === '' && link.getAttribute('href') === '#about'));
         });
       }
       window.addEventListener('hashchange', setActive);
@@ -67,57 +69,90 @@
         <a href="https://github.com/shruum" class="button" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/shruthi-gowda-19811b15/" class="button" target="_blank">LinkedIn</a>
       </p>
-      <!-- Upload your photo at media/profile.jpg relative to index.html -->
     </section>
 
     <!-- Background: Education, Experience & Projects -->
     <section id="background">
       <h2>Education</h2>
-      <ul>...
+      <ul>
+        <li><strong>PhD in Computer Vision and Artificial Intelligence</strong>, Eindhoven University of Technology (TU/e), Netherlands, 2023–Present</li>
+        <li><strong>MSc in Electrical and Computer Engineering</strong>, Universitat Politècnica de Catalunya (UPC) & Université Catholique de Louvain (UCL), Spain & Belgium, 2010–2012</li>
+        <li><strong>BEng in Electronics and Communication</strong>, Visvesvaraya Technological University (VTU), India, 2006–2010</li>
       </ul>
       <div class="section-gap"></div>
       <h2>Professional Experience</h2>
-      <ul>...
+      <ul>
+        <li><strong>Research Engineer & Tech Lead</strong> at NavInfo Europe B.V., Eindhoven, NL (2019–2023)
+          <ul>
+            <li>Led design and implementation of the Vision Development Module, a computer vision library for industrial defect detection.</li>
+            <li>Developed algorithms for adversarial robustness and continual learning optimized for edge devices.</li>
+            <li>Contributed to multi-view geometry, camera calibration, and 3D vision research.</li>
+          </ul>
+        </li>
+        <li><strong>Senior Software Engineer</strong> at National Instruments (Vision R&amp;D), Bangalore, IN (2013–2019)
+          <ul>
+            <li>Built a high-performance deep learning inference engine integrating TensorFlow and Intel OpenVINO for NI embedded hardware.</li>
+            <li>Developed and shipped industrial inspection products for quality control in manufacturing.</li>
+          </ul>
+        </li>
+        <li><strong>Research Assistant</strong> at Image and Signal Processing Lab, UCL, Belgium (2012–2013)
+          <ul>
+            <li>Conducted advanced research on image processing techniques for signal and vision applications.</li>
+          </ul>
+        </li>
       </ul>
       <div class="section-gap"></div>
       <h2>Projects</h2>
       <div class="grid grid-2">
-        <!-- SAFEXPLAIN -->
         <div>
           <h3>SAFEXPLAIN (EU Horizon Project)</h3>
           <p>As Tech Lead for the automotive use case, I designed safety patterns and developed novel explainable AI components for critical embedded systems. This project ensures that AI-driven features in autonomous vehicles adhere to ISO 26262 Functional Safety standards. <a href="https://safexplain.eu/automotive-case-study/" target="_blank">Automotive Case Study</a>.</p>
         </div>
-        <!-- ENFIELD -->
         <div>
           <h3>ENFIELD (EU Horizon Project)</h3>
           <p>Collaborated with 15 partners to research and implement adaptive AI algorithms featuring lifelong learning, robustness, and fairness. ENFIELD aims to create trustworthy AI for dynamic real-world environments. <a href="https://www.enfield-project.eu/" target="_blank">Project Site</a>.</p>
         </div>
-        <!-- NI Machine Vision -->
         <div>
           <h3>NI Machine Vision Library</h3>
-          <p>Led development of a machine vision library integrating deep learning inference with traditional CV, shipping industrial inspection workflows on NI embedded hardware. <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html" target="_blank">Vision Development Module</a>.</p>
+          <p>Led development of a machine vision library integrating deep learning inference with traditional computer vision techniques, shipping robust industrial inspection workflows on NI embedded hardware. <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html" target="_blank">Vision Development Module</a>.</p>
         </div>
-        <!-- Scene Understanding & Object Recognition -->
         <div>
-          <h3>Scene Understanding & Object Recognition Suite for ADS</h3>
-          <p>Developed in NavInfo’s Advanced Research Lab, this suite processes multi-camera inputs to detect road users, signs, and lane markers in real-time to support autonomous driving systems. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
+          <h3>Scene Understanding &amp; Object Recognition Suite for ADS</h3>
+          <p>Developed in NavInfo’s Advanced Research Lab, this suite processes multi-camera inputs to detect road users, traffic signs, and lane markers in real-time, supporting autonomous driving systems. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
         </div>
-        <!-- Anonymizer -->
         <div>
           <h3>Anonymizer for GDPR Compliance</h3>
           <p>Implemented an on-device perception module that detects and blurs personally identifiable information such as faces and license plates, ensuring GDPR compliance in video streams.</p>
         </div>
-        <!-- Change Rate Detection -->
         <div>
           <h3>Change Rate Detection for HD Map Updates</h3>
-          <p>Created algorithms to analyze geo-tagged video feeds and detect changes in road infrastructure, automating HD map maintenance for autonomous vehicle navigation. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
+          <p>Created algorithms to analyze geo-tagged video feeds and detect changes in road infrastructure, enabling automated HD map maintenance for autonomous vehicle navigation. <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank">NavInfo AI Expertise</a>.</p>
         </div>
       </div>
     </section>
 
     <!-- Publications & Patents -->
     <section id="pubs">
-      <!-- unchanged -->
+      <h2>Selected Publications</h2>
+      <ol>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2024). “Conserve-Update-Revise to Cure Generalization and Robustness Trade-off in Adversarial Training.” International Conference on Learning Representations (ICLR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “Dual Cognitive Architecture: Incorporating Biases and Multi-Memory Systems for Lifelong Learning.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2023). “LSFSL: Leveraging Shape Information in Few-shot Learning.” Workshop on Learning with Limited Labelled Data, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani, Ratnajit Mukherjee, Haris Iqbal, Shabbir Marzban, Ahmed Badar, Terence Brouns &amp; Bahram Zonooz (2022). “A Comprehensive Study of Real-Time Object Detection Networks Across Multiple Domains: A Survey.” Transactions on Machine Learning Research (TMLR). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “AI Driven Road Maintenance Inspection.” International Intelligent Transportation Systems World Congress (ITS World Congress). fileciteturn2file0</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Neural Bias Distillation to Improve Generalization and Robustness through Shape-awareness.” Conference on Lifelong Learning Agents (CoLLAs). fileciteturn2file1</li>
+        <li>Shruthi Gowda, Elahe Arani &amp; Bahram Zonooz (2021). “Do Thermal Data Make Detection Systems More Reliable?” Machine Learning for Autonomous Driving Workshop, Advances in Neural Information Processing Systems (NeurIPS). fileciteturn2file3</li>
+      </ol>
+      <div class="section-gap"></div>
+      <h2>Patents</h2>
+      <ul>
+        <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method to Detect Changes in Geo-Tagged Videos to Update HD Maps. fileciteturn2file0</li>
+        <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domains. fileciteturn2file0</li>
+        <li>Dutch Patent 020065 NL-PD: LSFSL: Leveraging Shape Information in Few-shot Learning. fileciteturn2file0</li>
+        <li>US Patent 019922 US-PD-VB/kk: Method to Add Inductive Bias into Deep Neural Networks. fileciteturn2file0</li>
+        <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System. fileciteturn2file0</li>
+        <li>Dutch Patent 020050 NL-PD1: Cognitive Continual Learning System. fileciteturn2file2</li>
+      </ul>
     </section>
 
     <!-- Media Section -->
@@ -136,7 +171,13 @@
 
     <!-- Other Skills Section -->
     <section id="other">
-      <!-- unchanged -->
+      <h2>Other Skills &amp; Hobbies</h2>
+      <p><strong>Travel Highlights:</strong> Exploring Europe’s landmarks and landscapes.</p>
+      <p><strong>Dance Performances:</strong></p>
+      <ul>
+        <li><a href="#" target="_blank">Contemporary Dance Showcase</a></li>
+        <li><a href="#" target="_blank">Classical Fusion Piece</a></li>
+      </ul>
     </section>
   </div>
 
