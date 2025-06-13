@@ -21,7 +21,7 @@
     p, li { margin-bottom: 1rem; }
     .section-card { background: #fff; border-radius: 8px; padding: 2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     .about-card { display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
-    .profile-pic { width: 200px; height: 200px; border-radius: 8px; object-fit: cover; }
+    .profile-pic { width: 200px; height: auto; border-radius: 8px; object-fit: cover; image-rendering: auto; }
     .about-content { flex: 2; min-width: 250px; }
     .grid.grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
     .edu-icon { margin-right: 0.5rem; }
@@ -58,8 +58,8 @@
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#industry">Industry</a></li>
       <li><a href="#pubs">Publications</a></li>
+      <li><a href="#industry">Industry</a></li>
       <li><a href="#media">Media</a></li>
       <li><a href="#other">Other Skills</a></li>
     </ul>
@@ -93,7 +93,7 @@
           <h2>Professional Experience</h2>
           <ul>
             <li><span style="color: #004080;">AI Research Engineer</span>, 2019 - 2023 <br>Advanced Research Lab, NavInfo Europe B.V.</li>
-            <li><span style="color: #004080;">Senior Software Engineer</span>, 2013 - 2019 <br> National Instruments </li>
+            <li><span style="color: #004080;">Senior Software Engineer</span>, 2013 - 2019 <br> Machine Vision Lab, National Instruments (NI) </li>
 <!--             <li>Research Assistant, UCL, Belgium (2012–2013)</li> -->
           </ul>
         </div>
@@ -269,6 +269,7 @@
             <p>Led development of a machine vision library integrating deep learning inference with traditional computer vision techniques, shipping robust industrial inspection workflows on NI embedded hardware.</p>
         </div>
           
+        <!-- Patents block moved outside the grid -->
         <div class="section-gap"></div>
         <h2>Patents</h2>
         <ul>
@@ -276,8 +277,8 @@
           <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domain.</li>
           <li>Dutch Patent 020065 NL-PD: Leveraging Shape Information in Few-shot Learning.</li>
           <li>US Patent 019922: Method to Add Inductive Bias into Deep Neural Networks.</li>
-          <li>US Patent 17/581,759:Deep Learning Based Multi-Sensor Detection System.</li>
-          <li>Dutch Patent 020050: A Cognitive-inspired Multi-Module Architecture for Continual Learning</li>
+          <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System.</li>
+          <li>Dutch Patent 020050: A Cognitive-inspired Multi-Module Architecture for Continual Learning.</li>
         </ul>
       </div>
     </section>
