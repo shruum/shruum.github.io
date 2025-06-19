@@ -89,6 +89,7 @@ nav{
   background: #ffffff;   /* opaque so text doesn’t show through          */
   z-index: 1000;         /* keeps it above the rest of the content       */
   box-shadow: 0 1px 4px rgba(0,0,0,0.06);  /* soft divider               */
+  padding: 1.2rem 0;
 }
     
 nav ul {
@@ -136,10 +137,19 @@ p, li {
 }
 
 .profile-pic {
-  width: 200px;
+  width: 260px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
+}
+
+.profile-box{
+  flex: 1;
+  min-width: 240px;     /* same as photo width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center the picture */
+  text-align: left;     /* contact list stays left-aligned */
 }
 
 .about-content {
@@ -266,11 +276,12 @@ a.button {
   <div class="container">
     <section id="home">
   
-  <div class="section-card about-card">
+  <div class="section-card about-card"> 
+  <!-- <div class="profile-box"> -->
   <div style="flex: 1; min-width: 220px; text-align: center;">
     <img src="media/profile.jpg" alt="Photo of Shruthi Gowda" class="profile-pic">
     
-  <div class="contact-info" style="margin-top: 1rem; font-size: 0.95rem; text-align: left; display: inline-block;">
+  <div class="contact-info" style="margin-top: 1rem; font-size: 0.95rem; text-align: left">
   <ul style="list-style: none; padding: 0; margin: 0;">
     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 0.5rem;">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#333" viewBox="0 0 16 16">
@@ -327,21 +338,33 @@ a.button {
           <h1>About Me </h1>
           <p>I'm Shruthi Gowda, a <strong><span style="color: #004080;">PhD candidate</span></strong> in the <a href="https://dai.win.tue.nl/" target="_blank" color: #004080">Data &amp; AI Cluster</a> at TU Eindhoven, Netherlands.</p>
           <p>My research focuses on neuro-inspired AI and deep learning, exploring cognitive biases, multi-memory systems, and sparse coding — bridging workings in brain with neural network architectures.</p>
-          <p>With 10+ years in industry as AI Research Engineer and Software Engineer, I have built machine learning and embedded software solutions for Autonomous Driving, Quality Inspection, and Healthcare. Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.</p>
+          <p>With 10+ years in industry as <span style="color: #004080;">AI Research Engineer</span> and <strong><span style="color: #004080;">Software Engineer</span>, I have built machine learning and embedded software solutions for Autonomous Driving, Quality Inspection, and Healthcare. Combining industry experience with academic curiosity, I’m passionate about developing intelligent systems that are both computationally efficient and grounded in cognitive principles.</p>
           <p><strong>Research Interests:</strong> Neuro-inspired Artificial Intelligence, Cognitive Bias, Continual Learning, Robustness, Multi-Modality Learning.</p>
 <!--           <p><strong>Contact:</strong><br>shruthi.ngowda@outlook.com<br>s.gowda@tue.nl</p> -->
           <div class="section-gap"></div>
           <h2><strong>Education</strong></h2>
           <ul>
-            <li><span style="color: #333446;">PhD in Neuro-inspired AI</span>, 2023 – Present<br>Data &amp; AI Cluster, Mathematics &amp; Computer Science Dept, TU Eindhoven, Netherlands</li>
-            <li><span style="color: #333446;">MSc in Computer Science</span>, 2010 – 2012<br>Universitat Politècnica de Catalunya (UPC), Spain &amp;  Université Catholique de Louvain (UCL), Belgium </li>
-            <li><span style="color: #333446;">BE in Electronics and Communication Engineering</span> — 2006 – 2010<br>Visvesvaraya Technological University (VTU), India</li>
+            <li><span style="color: #333446;"><span style="color:#004080;font-weight:bold;">PhD in Neuro-inspired Adaptive AI</span>, 2023 – Present<br>Data &amp; AI Cluster, Mathematics &amp; Computer Science Dept, TU Eindhoven, Netherlands</li>
+            <li><span style="color: #333446;"><span style="color:#004080;font-weight:bold;">MSc in Computer Science</span>, 2010 – 2012<br>Universitat Politècnica de Catalunya (UPC), Spain &amp;  Université Catholique de Louvain (UCL), Belgium </li>
+            <li><span style="color: #333446;"><span style="color:#004080;font-weight:bold;">BE in Electronics and Communication Engineering</span> — 2006 – 2010<br>Visvesvaraya Technological University (VTU), India</li>
           </ul>
           <div class="section-gap"></div>
           <h2>Professional Experience</h2>
           <ul>
-            <li><span style="color: #333446;">AI Research Engineer</span>, 2019 - 2023 <br> <a href="https://www.navinfo.eu/expertise/artificial-intelligence/" target="_blank" color: #004080>Advanced Research Lab</a>, NavInfo Europe B.V.</li>
-            <li><span style="color: #333446;">Senior Software Engineer</span>, 2013 - 2019 <br> <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html" target="_blank" color: #004080>Machine Vision Lab</a>, National Instruments (NI) </li>
+          <li>
+            <span style="color:#004080;font-weight:bold;">AI Research Engineer</span>, 2019 – 2023<br>
+            <a href="https://www.navinfo.eu/expertise/artificial-intelligence/"
+               target="_blank" style="color:#004080;">NavInfo Europe B.V., Advanced Research Lab</a><br>
+            <em>Researched and implemented a complete scene-understanding suite—traffic-sign
+                recognition, road-surface inspection, and HD-map change detection—now
+                powering NavInfo’s HD Maps and autonomous-driving platform.</em>
+          <li>
+            <span style="color:#004080;font-weight:bold;">Senior Software Engineer → Team Lead</span>, 2013 – 2019<br>
+            <a href="https://www.ni.com/nl-nl/shop/product/vision-development-module.html"
+               target="_blank" style="color:#004080;">National Instruments, Machine Vision Lab</a><br>
+            <em>Drove design and delivery of the Vision Development Module—NI’s flagship
+                computer-vision library for industrial inspection.</em>
+          </li>
 <!--             <li>Research Assistant, UCL, Belgium (2012–2013)</li> -->
           </ul>
         </div>
@@ -540,8 +563,11 @@ a.button {
         <ul> -->
           <li>🎤 Giving a talk at the <a href="https://www.bme.hu/en/esemenyek/ENFIELD-AI-summer-school" target="_blank" color: #004080>ENFIELD AI Summer School</a> in July 2025 </li>
           <li>🏛️ Presented at the <a href="https://www.linkedin.com/posts/activity-7338487262537560064-uG28" target="_blank" color: #004080>Adaptive AI Workshop</a> at Politecnico di Milano, bridging research with industrial applications.</li>
-          <li>👩‍💼 Participated in the <a href="https://www.youtube.com/watch?v=hskSmNDvcwk&list=PL29HjfKrAiDQJT8bQyAyZ35IYzN1i2bNq" target="_blank" color: #004080>Women in AI </a> panel organized by <a href="https://cairne.eu/" target="_blank"> Confederation of Laboratories for
-Artificial Intelligence Research in Europe</a>, discussing diversity in technology and research careers.</li>
+          <li>👩‍💼 Participated in the Women in AI panel organized by <a href="https://cairne.eu/" target="_blank"> CAIRNE</a>, discussing diversity in technology and research careers.
+          <div class="pub-video">
+            <iframe src="https://www.youtube.com/watch?v=hskSmNDvcwk&list=PL29HjfKrAiDQJT8bQyAyZ35IYzN1i2bNq" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </li>
           <li>📌 Presented my work at <strong>ICLR </strong> in Vienna, 2024.</li>
         </ul>
         <img src="media/iclr.jpeg" alt="ICLR 2024 Poster Presentation" style="max-width: 320px; width: 100%; border-radius: 8px; margin: 0.5rem 0; display: block;">
