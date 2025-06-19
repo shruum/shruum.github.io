@@ -45,7 +45,6 @@ body {
 }
 
 
-
 /* Set regular links to blue with underline */
 a, .pub-links a, .button {
   color: #004080;
@@ -64,25 +63,34 @@ nav a:hover, nav a.active {
 
 /* Standardize image sizes inside .pub-entry */
 .pub-entry img {
-  width: 180px;
-  height: 120px;
-  object-fit: cover;
+  width: 200px;
+  height: auto;
+  object-fit: contain;
   border-radius: 4px;
 }
 
 /* Container and layout styling */
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
+  margin-top: 3.5rem;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-nav {
+/* nav {
   background: none;
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
+} */
+nav{
+  position: sticky;      /* already set, but left for clarity            */
+  top: 0;                /* sticks to the top edge                       */
+  background: #ffffff;   /* opaque so text doesn’t show through          */
+  z-index: 1000;         /* keeps it above the rest of the content       */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);  /* soft divider               */
 }
+    
 nav ul {
   list-style: none;
   display: flex;
@@ -171,7 +179,7 @@ p, li {
   margin-bottom: 2rem;
   overflow: hidden;
 }
-
+    
 .pub-details {
   flex: 3;
   padding: 1rem;
@@ -339,7 +347,6 @@ a.button {
         </div>
       </div>
     </section>
-    </div>
 
     <!-- Publications -->
     <section id="pubs">
@@ -533,7 +540,8 @@ a.button {
         <ul> -->
           <li>🎤 Giving a talk at the <a href="https://www.bme.hu/en/esemenyek/ENFIELD-AI-summer-school" target="_blank" color: #004080>ENFIELD AI Summer School</a> in July 2025 </li>
           <li>🏛️ Presented at the <a href="https://www.linkedin.com/posts/activity-7338487262537560064-uG28" target="_blank" color: #004080>Adaptive AI Workshop</a> at Politecnico di Milano, bridging research with industrial applications.</li>
-          <li>👩‍💼 Participated in the <a href="https://www.youtube.com/watch?v=hskSmNDvcwk&list=PL29HjfKrAiDQJT8bQyAyZ35IYzN1i2bNq" target="_blank" color: #004080>Women in AI <\a> panel organized by <a href="https://cairne.eu/" target="_blank"> CAIRNE</a>, discussing diversity in technology and research careers.</li>
+          <li>👩‍💼 Participated in the <a href="https://www.youtube.com/watch?v=hskSmNDvcwk&list=PL29HjfKrAiDQJT8bQyAyZ35IYzN1i2bNq" target="_blank" color: #004080>Women in AI </a> panel organized by <a href="https://cairne.eu/" target="_blank"> Confederation of Laboratories for
+Artificial Intelligence Research in Europe</a>, discussing diversity in technology and research careers.</li>
           <li>📌 Presented my work at <strong>ICLR </strong> in Vienna, 2024.</li>
         </ul>
         <img src="media/iclr.jpeg" alt="ICLR 2024 Poster Presentation" style="max-width: 320px; width: 100%; border-radius: 8px; margin: 0.5rem 0; display: block;">
@@ -556,7 +564,7 @@ a.button {
   </div>
 
   <footer>
-    <p>&copy; 2025 Shruthi Gowda. Designed with ❤️.</p>
+    <p>&copy; 2025 Shruthi Gowda. We are Star stuff!.</p>
   </footer>
 </body>
 </html>
