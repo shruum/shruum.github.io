@@ -248,7 +248,13 @@ a.button {
   border-radius: 4px;
   font-size: 0.9rem;
 }
-
+#industry .grid.grid-2 { /* stack projects vertically on Industry tab */
+  display: block;
+}
+#industry .grid.grid-2 > div { /* spacing between project blocks */
+  margin-bottom: 1.25rem;
+}
+    
  </style>
   <script>
     function showSection() {
@@ -269,8 +275,8 @@ a.button {
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="#pubs">Publications</a></li>
-      <li><a href="#industry">Industry</a></li>
+      <li><a href="#pubs">Publications/Patents</a></li>
+      <li><a href="#industry">Projects</a></li>
       <li><a href="#media">News & Media</a></li>
       <li><a href="#other">Travel & Hobbies</a></li>
     </ul>
@@ -510,6 +516,17 @@ a.button {
 </div> --> 
 
 <!-- More publication cards to be added here -->
+        
+        <div class="section-gap"></div>
+        <h2>Patents</h2>
+        <ul>
+          <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method To Detect Changes In Geo-Tagged Videos To Update HD Maps.</li>
+          <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domain.</li>
+          <li>Dutch Patent 020065 NL-PD: Leveraging Shape Information in Few-shot Learning.</li>
+          <li>US Patent 019922: Method to Add Inductive Bias into Deep Neural Networks.</li>
+          <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System.</li>
+          <li>Dutch Patent 020050: A Cognitive-inspired Multi-Module Architecture for Continual Learning.</li>
+        </ul>
 
       </div>
     </section>
@@ -547,19 +564,7 @@ a.button {
             <p>Led development of a machine vision library integrating deep learning inference with traditional computer vision techniques, shipping robust industrial inspection workflows on NI embedded hardware.</p>
         </div>
         </div>
-          
-        <!-- Patents block moved outside the grid -->
-        <div class="section-gap"></div>
-        <h2>Patents</h2>
-        <ul>
-          <li>European Patent 22159288.4: AI Based Change Detection System for Executing a Method To Detect Changes In Geo-Tagged Videos To Update HD Maps.</li>
-          <li>US Patent 17/894,870: Method and System for Instilling Shape Awareness to Self-Supervised Learning Domain.</li>
-          <li>Dutch Patent 020065 NL-PD: Leveraging Shape Information in Few-shot Learning.</li>
-          <li>US Patent 019922: Method to Add Inductive Bias into Deep Neural Networks.</li>
-          <li>US Patent 17/581,759: Deep Learning Based Multi-Sensor Detection System.</li>
-          <li>Dutch Patent 020050: A Cognitive-inspired Multi-Module Architecture for Continual Learning.</li>
-        </ul>
-      </div>
+
     </section>
 
 
