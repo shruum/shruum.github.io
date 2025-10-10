@@ -248,13 +248,16 @@ footer {
   border-radius: 4px;
   font-size: 0.9rem;
 }
-#industry .grid.grid-2 { /* stack projects vertically on Industry tab */
-  display: block;
+.extra-wrap { max-width: 900px; margin: 0 auto; }
+
+#industry .grid.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
-#industry .grid.grid-2 > div { /* spacing between project blocks */
-  margin-bottom: 1.25rem;
-}
-    
+#industry .grid.grid-2 > div { margin-bottom: 0; }
+
+
  </style>
   <script>
     function showSection() {
@@ -577,7 +580,7 @@ footer {
     </section>
 
     <section id="other">
-      <div class="section-card">
+      <div class="section-card extra-wrap">
         <!-- <h2>Travel</h2>
         <!-- <p>Here's a visual of countries I've visited so far.</p> -->
         <!-- <img src="media/my-travel-map.png" alt="Visited Countries Map" style="max-width: 500px; max-height: 400px; width: 100%; border-radius: 8px; height: auto; margin: 1rem auto; display: block;"> --> -->
